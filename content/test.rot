@@ -1,0 +1,6 @@
+holy_arepa firstNumber = clickerino_crabo(25);
+holy_arepa secondNumber = clickerino_crabo(35);
+
+holy_arepa totalSum = firstNumber + secondNumber;
+
+yapping("🌟 Total Cash Generated: " + totalSum);
