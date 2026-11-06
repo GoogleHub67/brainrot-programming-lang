@@ -3,23 +3,16 @@ ifeq ($(OS),Windows_NT)
     # Windows native execution commands
     RM = del /Q /F
     NULL_OUTPUT = >nul 2>&1
-    
-    # 🔴 FIX: Make sure this says .ts and NOT .mts
     EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
-    
     COMPILE_CHECK = npx tsc --noEmit --project .
     INSTALL_ENV = npm install --save-dev typescript @types/node $(NULL_OUTPUT)
 else
     # Linux / Debian native execution commands
     RM = sudo rm -f
     NULL_OUTPUT = >/dev/null 2>&1
-    
-    # FIX: Targets the .mts extension directly and drops the invalid bad option flag
-    EXEC_ENGINE = node --experimental-strip-types brainrotengine.mts
-    
+    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
     COMPILE_CHECK = npx tsc --noEmit --project .
     
-    # Corrected macro configuration using uniform space indents to prevent raw shell assignment errors
     define INSTALL_ENV
 echo "Installing Linux crypto system requirements..." && \
 sudo apt-get update -y $(NULL_OUTPUT) || true && \
@@ -30,7 +23,6 @@ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg 
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list > /dev/null && \
 sudo apt-get update -y $(NULL_OUTPUT) && \
 sudo apt-get install -y nodejs $(NULL_OUTPUT) && \
-npm init -y $(NULL_OUTPUT) || true && \
 npm install --save-dev typescript @types/node $(NULL_OUTPUT)
     endef
 endif
