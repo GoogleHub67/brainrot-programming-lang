@@ -4,8 +4,8 @@ ifeq ($(OS),Windows_NT)
     RM = del /Q /F
     NULL_OUTPUT = >nul 2>&1
     
-    # FIX: Bypasses ts-node configuration bugs by utilizing Node's built-in TypeScript execution support
-    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
+    # FIX: Explicitly forces Node to evaluate files as modern ES modules without needing a package.json
+    EXEC_ENGINE = node --experimental-strip-types --experimental-default-type=module brainrotengine.ts
     
     COMPILE_CHECK = npx tsc --noEmit --project .
     INSTALL_ENV = npm init -y $(NULL_OUTPUT) && npm install --save-dev typescript @types/node $(NULL_OUTPUT)
@@ -14,8 +14,8 @@ else
     RM = sudo rm -f
     NULL_OUTPUT = >/dev/null 2>&1
     
-    # FIX: Bypasses ts-node configuration bugs by utilizing Node's built-in TypeScript execution support
-    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
+    # FIX: Explicitly forces Node to evaluate files as modern ES modules without needing a package.json
+    EXEC_ENGINE = node --experimental-strip-types --experimental-default-type=module brainrotengine.ts
     
     COMPILE_CHECK = npx tsc --noEmit --project .
     
