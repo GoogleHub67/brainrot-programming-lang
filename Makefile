@@ -4,8 +4,8 @@ ifeq ($(OS),Windows_NT)
     RM = del /Q /F
     NULL_OUTPUT = >nul 2>&1
     
-    # FIX: Explicitly forces Node to evaluate files as modern ES modules without needing a package.json
-    EXEC_ENGINE = node --experimental-strip-types --experimental-default-type=module brainrotengine.ts
+    # FIX: Targets the .mts extension directly and drops the invalid bad option flag
+    EXEC_ENGINE = node --experimental-strip-types brainrotengine.mts
     
     COMPILE_CHECK = npx tsc --noEmit --project .
     INSTALL_ENV = npm init -y $(NULL_OUTPUT) && npm install --save-dev typescript @types/node $(NULL_OUTPUT)
@@ -14,8 +14,8 @@ else
     RM = sudo rm -f
     NULL_OUTPUT = >/dev/null 2>&1
     
-    # FIX: Explicitly forces Node to evaluate files as modern ES modules without needing a package.json
-    EXEC_ENGINE = node --experimental-strip-types --experimental-default-type=module brainrotengine.ts
+    # FIX: Targets the .mts extension directly and drops the invalid bad option flag
+    EXEC_ENGINE = node --experimental-strip-types brainrotengine.mts
     
     COMPILE_CHECK = npx tsc --noEmit --project .
     
