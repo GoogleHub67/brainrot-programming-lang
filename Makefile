@@ -3,14 +3,20 @@ ifeq ($(OS),Windows_NT)
     # Windows native execution commands
     RM = del /Q /F
     NULL_OUTPUT = >nul 2>&1
-    EXEC_ENGINE = npx ts-node brainrotengine.ts
+    
+    # FIX: Bypasses ts-node configuration bugs by utilizing Node's built-in TypeScript execution support
+    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
+    
     COMPILE_CHECK = npx tsc --noEmit --project .
-    INSTALL_ENV = npm init -y $(NULL_OUTPUT) && npm install --save-dev typescript ts-node @types/node $(NULL_OUTPUT)
+    INSTALL_ENV = npm init -y $(NULL_OUTPUT) && npm install --save-dev typescript @types/node $(NULL_OUTPUT)
 else
     # Linux / Debian native execution commands
     RM = sudo rm -f
     NULL_OUTPUT = >/dev/null 2>&1
-    EXEC_ENGINE = npx ts-node brainrotengine.ts
+    
+    # FIX: Bypasses ts-node configuration bugs by utilizing Node's built-in TypeScript execution support
+    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
+    
     COMPILE_CHECK = npx tsc --noEmit --project .
     
     # Corrected macro configuration using uniform space indents to prevent raw shell assignment errors
@@ -25,7 +31,7 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 sudo apt-get update -y $(NULL_OUTPUT) && \
 sudo apt-get install -y nodejs $(NULL_OUTPUT) && \
 npm init -y $(NULL_OUTPUT) || true && \
-npm install --save-dev typescript ts-node @types/node $(NULL_OUTPUT)
+npm install --save-dev typescript @types/node $(NULL_OUTPUT)
     endef
 endif
 
