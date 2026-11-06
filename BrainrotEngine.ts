@@ -1,7 +1,7 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as os from 'os';
-import { execSync } from 'child_process';
+const fs = require('fs');
+const path = require('path');
+const os = require('os');
+const { execSync } = require('child_process');
 
 export class BrainrotEngine {
 
@@ -131,9 +131,8 @@ export class BrainrotEngine {
     }
 
     const capFilePath = args[0];
-    const dictPath = args[1] || "/content/keywords.json";
+    const dictPath = args[1] || "keywords.json";
 
-    // FIX: Variables initialized with structural safe-defaults to satisfy control flow checks
     let capCode: string = "";
     try {
       capCode = fs.readFileSync(capFilePath, 'utf-8');
@@ -179,9 +178,8 @@ export class BrainrotEngine {
     process.on('exit', cleanup);
     process.on('SIGINT', () => { cleanup(); process.exit(1); });
 
-    // Execute the compiled TypeScript output directly using ts-node
+    // Execute using clean experimental execution matching commonjs environment limits
     try {
-      const tempFilePath = path.join(tempDir, `cap_output_${Date.now()}.ts`);
       const output = execSync(`node --experimental-strip-types ${tempFilePath}`, { encoding: 'utf-8' });
       console.log(output.trim());
     } catch (e: any) {
