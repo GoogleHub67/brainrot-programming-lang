@@ -3,16 +3,23 @@ ifeq ($(OS),Windows_NT)
     # Windows native execution commands
     RM = del /Q /F
     NULL_OUTPUT = >nul 2>&1
-    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
+    
+    # FIX: Swapped to stable 'tsx' execution runtime to bypass Node experimental bugs
+    EXEC_ENGINE = npx tsx brainrotengine.ts
+    
     COMPILE_CHECK = npx tsc --noEmit --project .
     INSTALL_ENV = npm install --save-dev typescript @types/node $(NULL_OUTPUT)
 else
     # Linux / Debian native execution commands
     RM = sudo rm -f
     NULL_OUTPUT = >/dev/null 2>&1
-    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
+    
+    # FIX: Swapped to stable 'tsx' execution runtime to bypass Node experimental bugs
+    EXEC_ENGINE = npx tsx brainrotengine.ts
+    
     COMPILE_CHECK = npx tsc --noEmit --project .
     
+    # Corrected macro configuration using uniform space indents to prevent raw shell assignment errors
     define INSTALL_ENV
 echo "Installing Linux crypto system requirements..." && \
 sudo apt-get update -y $(NULL_OUTPUT) || true && \
@@ -41,10 +48,10 @@ compile:
 	@echo "Analyzing compilation diagnostics across the workspace core..."
 	@$(COMPILE_CHECK)
 
-# Step 3: Run the Script Engine targeting test.rot
+# Step 3: Run the Script Engine targeting the nested workspace content directory scripts
 run:
-	@echo "Invoking the custom parsing pipeline on test.rot..."
-	@$(EXEC_ENGINE) test.rot
+	@echo "Invoking the custom parsing pipeline on content/test.rot..."
+	@$(EXEC_ENGINE) content/test.rot content/keywords.json
 
 # Bonus Step: Clean workspace development caches safely across cross-platforms
 clean:
