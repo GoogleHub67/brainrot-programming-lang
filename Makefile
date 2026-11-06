@@ -4,11 +4,11 @@ ifeq ($(OS),Windows_NT)
     RM = del /Q /F
     NULL_OUTPUT = >nul 2>&1
     
-    # FIX: Targets the .mts extension directly and drops the invalid bad option flag
-    EXEC_ENGINE = node --experimental-strip-types brainrotengine.mts
+    # 🔴 FIX: Make sure this says .ts and NOT .mts
+    EXEC_ENGINE = node --experimental-strip-types brainrotengine.ts
     
     COMPILE_CHECK = npx tsc --noEmit --project .
-    INSTALL_ENV = npm init -y $(NULL_OUTPUT) && npm install --save-dev typescript @types/node $(NULL_OUTPUT)
+    INSTALL_ENV = npm install --save-dev typescript @types/node $(NULL_OUTPUT)
 else
     # Linux / Debian native execution commands
     RM = sudo rm -f
