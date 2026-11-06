@@ -1,0 +1,11 @@
+{
+  "name": "brainrot-programming-lang",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Custom brainrot compiler ecosystem",
+  "main": "brainrotengine.ts",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.0.0"
+  }
+}
