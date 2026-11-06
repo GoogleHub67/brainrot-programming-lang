@@ -133,7 +133,8 @@ export class BrainrotEngine {
     const capFilePath = args[0];
     const dictPath = args[1] || "/content/keywords.json";
 
-    let capCode: string;
+    // FIX: Variables initialized with structural safe-defaults to satisfy control flow checks
+    let capCode: string = "";
     try {
       capCode = fs.readFileSync(capFilePath, 'utf-8');
     } catch {
@@ -141,7 +142,7 @@ export class BrainrotEngine {
       process.exit(1);
     }
 
-    let rawJson: string;
+    let rawJson: string = "";
     try {
       rawJson = fs.readFileSync(dictPath, 'utf-8');
     } catch {
@@ -149,7 +150,7 @@ export class BrainrotEngine {
       process.exit(1);
     }
 
-    let dict: Array<[string, string]>;
+    let dict: Array<[string, string]> = [];
     try {
       dict = this.parseFlatJson(rawJson);
     } catch (e: any) {
