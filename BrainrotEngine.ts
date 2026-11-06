@@ -181,7 +181,7 @@ export class BrainrotEngine {
 
     // Execute the compiled TypeScript output directly using ts-node
     try {
-      const output = execSync(`npx ts-node ${tempFilePath}`, { encoding: 'utf-8' });
+      const output = execSync(`node --experimental-strip-types \${tempFilePath}`, { encoding: 'utf-8' });
       console.log(output.trim());
     } catch (e: any) {
       console.log(`SKILL ISSUE (Compile/Runtime Error):\n${e.message}`);
