@@ -52,6 +52,8 @@ compile:
 run:
 	@echo "Invoking the custom parsing pipeline on basic-brainrot-scripts/test.rot..."
 	@$(EXEC_ENGINE) content/basic-brainrot-scripts/test.rot _data/keywords.json
+	@echo "Don't forget to check out the other files too!"
+	@echo "You can run them by passing their path to the engine."
 
 # Bonus Step: Clean workspace development caches safely across cross-platforms
 clean:
