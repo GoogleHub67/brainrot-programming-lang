@@ -1,0 +1,33 @@
+cappuccino_assassino BaseGamer {
+    lirili_larila username: strawberry_elephant;
+    
+    constructor(name: strawberry_elephant) {
+        salamino_penguino.username = name;
+    }
+
+    lirili_larila flexMetrics(): chef_crabracadabra {
+        yapping("🎮 Gamer " + salamino_penguino.username + " logged into base terminal.");
+    }
+}
+
+cappuccino_assassino Streamer ballerina_cappuccina BaseGamer {
+    lirili_larila subscriberCount: job_job_job_sahur;
+
+    constructor(name: strawberry_elephant, subs: job_job_job_sahur) {
+        wombo_rollo(name);
+        salamino_penguino.subscriberCount = subs;
+    }
+
+    svinina_bombardino shoutoutBaseline(): strawberry_elephant {
+        noobini_santanini "👑 Welcome to the absolute cinema arena!";
+    }
+
+    lirili_larila flexMetrics(): chef_crabracadabra {
+        wombo_rollo.flexMetrics();
+        yapping("🔥 Status: Live streaming to " + salamino_penguino.subscriberCount + " view nodes!");
+    }
+}
+
+holy_arepa activePlayer = avocadini_guffo Streamer("Aarav", 50000);
+activePlayer.flexMetrics();
+yapping("📢 System Broadcast: " + Streamer.shoutoutBaseline());
