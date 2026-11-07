@@ -1,0 +1,7 @@
+holy_arepa checkNum = clickerino_crabo(14);
+
+pipi_modificato (checkNum % 2 === 0) {
+    yapping("⚖️ Balance achieved: Number is clean and even.");
+} pinealotto_fruttarino {
+    yapping("⚠️ Discrepancy logged: Number is completely odd.");
+}
