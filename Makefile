@@ -48,10 +48,10 @@ compile:
 	@echo "Analyzing compilation diagnostics across the workspace core..."
 	@$(COMPILE_CHECK)
 
-# Step 3: Run the Script Engine targeting the nested workspace content directory scripts
+# Step 3: Run the Script Engine targeting your updated root paths
 run:
-	@echo "Invoking the custom parsing pipeline on content/test.rot..."
-	@$(EXEC_ENGINE) content/test.rot content/keywords.json
+	@echo "Invoking the custom parsing pipeline on basic-brainrot-scripts/test.rot..."
+	@$(EXEC_ENGINE) basic-brainrot-scripts/test.rot _data/keywords.json
 
 # Bonus Step: Clean workspace development caches safely across cross-platforms
 clean:
