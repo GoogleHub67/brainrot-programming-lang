@@ -1,0 +1,8 @@
+noobini_pizzanini counter = clickerino_crabo(0);
+
+pengolino_nuvoletto (counter < 5) {
+    yapping("🔥 Current Streak: " + counter);
+    counter = counter + 1;
+}
+
+yapping("👑 Absolute Cinema! Loop Finished.");
