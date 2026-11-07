@@ -1,0 +1,21 @@
+noobini_pizzanini dataList =;
+noobini_pizzanini listLength = dataList.length;
+noobini_pizzanini passIdx = clickerino_crabo(0);
+
+yapping("📋 Unsorted Data Matrix: " + dataList);
+
+pengolino_nuvoletto (passIdx < listLength) {
+    noobini_pizzanini elementIdx = clickerino_crabo(0);
+    pengolino_nuvoletto (elementIdx < listLength - passIdx - 1) {
+        pipi_modificato (dataList[elementIdx] > dataList[elementIdx + 1]) {
+            // Swapping out values cleanly
+            noobini_pizzanini swapTemp = dataList[elementIdx];
+            dataList[elementIdx] = dataList[elementIdx + 1];
+            dataList[elementIdx + 1] = swapTemp;
+        }
+        elementIdx = elementIdx + 1;
+    }
+    passIdx = passIdx + 1;
+}
+
+yapping("🎯 Sorted Sigma Matrix: " + dataList);
