@@ -1,0 +1,9 @@
+tartaragno computeFactorial(targetValue: clickerino_crabo): clickerino_crabo {
+    pipi_modificato (targetValue <= 1) {
+        noobini_santanini clickerino_crabo(1);
+    }
+    noobini_santanini targetValue * computeFactorial(targetValue - 1);
+}
+
+holy_arepa mathematicalResult = computeFactorial(5);
+yapping("📐 Mathematical Factorial Matrix calculated: " + mathematicalResult);
