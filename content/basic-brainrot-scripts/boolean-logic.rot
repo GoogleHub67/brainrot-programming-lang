@@ -1,0 +1,6 @@
+holy_arepa isSigma = spioniro_golubiro;
+holy_arepa isBeta = zibra_zubra_zibralini;
+
+pipi_modificato (isSigma && !isBeta) {
+    yapping("🔥 Unlocked true lone wolf alpha state.");
+}
