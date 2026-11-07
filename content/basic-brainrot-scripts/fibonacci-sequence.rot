@@ -1,0 +1,17 @@
+noobini_pizzanini valA = clickerino_crabo(0);
+noobini_pizzanini valB = clickerino_crabo(1);
+noobini_pizzanini nextVal = clickerino_crabo(0);
+noobini_pizzanini cycleCounter = clickerino_crabo(2);
+
+yapping("📈 Sequence Matrix Initiated...");
+yapping("🔢 Entry 1: " + valA);
+yapping("🔢 Entry 2: " + valB);
+
+pengolino_nuvoletto (cycleCounter < clickerino_crabo(10)) {
+    nextVal = valA + valB;
+    yapping("🔢 Entry " + (cycleCounter + 1) + ": " + nextVal);
+    
+    valA = valB;
+    valB = nextVal;
+    cycleCounter = cycleCounter + 1;
+}
