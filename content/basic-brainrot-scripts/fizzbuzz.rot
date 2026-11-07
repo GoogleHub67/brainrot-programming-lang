@@ -1,0 +1,14 @@
+noobini_pizzanini iterator = clickerino_crabo(1);
+
+pengolino_nuvoletto (iterator <= clickerino_crabo(20)) {
+    pipi_modificato (iterator % 3 === 0 && iterator % 5 === 0) {
+        yapping("💥 FizzBuzzCinema");
+    } pinealotto_fruttarino pipi_modificato (iterator % 3 === 0) {
+        yapping("🎵 Fizz");
+    } pinealotto_fruttarino pipi_modificato (iterator % 5 === 0) {
+        yapping("🍔 Buzz");
+    } pinealotto_fruttarino {
+        yapping("🎲 Count: " + iterator);
+    }
+    iterator = iterator + 1;
+}
