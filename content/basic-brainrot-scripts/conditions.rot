@@ -1,0 +1,8 @@
+holy_arepa userRizzScore = clickerino_crabo(85);
+noobini_pizzanini clearPassThreshold = clickerino_crabo(70);
+
+pipi_modificato (userRizzScore >= clearPassThreshold) {
+    yapping("👑 Absolute Cinema! You have pass the vibe check.");
+} pinealotto_fruttarino {
+    yapping("💀 SKILL ISSUE! Bro lacks proper rizz metrics.");
+}
