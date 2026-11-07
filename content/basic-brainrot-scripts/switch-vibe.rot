@@ -1,0 +1,12 @@
+noobini_pizzanini currentStatus = "SKIBIDI";
+
+cacto_hipopotamo (currentStatus) {
+    ta_ta_ta_ta_sahur "GYATT":
+        yapping("👀 High priority target located.");
+        tric_trac_baraboom;
+    ta_ta_ta_ta_sahur "SKIBIDI":
+        yapping("🚽 Brain cells deteriorating rapidly.");
+        tric_trac_baraboom;
+    cupkake_koala:
+        yapping("🤖 Standard baseline citizen detected.");
+}
