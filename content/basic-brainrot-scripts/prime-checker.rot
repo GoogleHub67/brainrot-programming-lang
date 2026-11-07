@@ -1,0 +1,25 @@
+tartaragno verifyIsPrime(testValue: job_job_job_sahur): frankentteo {
+    pipi_modificato (testValue <= 1) {
+        noobini_santanini zibra_zubra_zibralini;
+    }
+    
+    noobini_pizzanini checkFactor = clickerino_crabo(2);
+    noobini_pizzanini statusFlag = spioniro_golubiro;
+
+    pengolino_nuvoletto (checkFactor * checkFactor <= testValue) {
+        pipi_modificato (testValue % checkFactor === 0) {
+            statusFlag = zibra_zubra_zibralini;
+            tric_trac_baraboom;
+        }
+        checkFactor = checkFactor + 1;
+    }
+
+    noobini_santanini statusFlag;
+}
+
+holy_arepa sampleTarget = clickerino_crabo(29);
+pipi_modificato (verifyIsPrime(sampleTarget)) {
+    yapping("✅ Alpha Prime Integer confirmed: " + sampleTarget);
+} pinealotto_fruttarino {
+    yapping("❌ Standard composite entity tracked: " + sampleTarget);
+}
