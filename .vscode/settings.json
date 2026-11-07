@@ -1,6 +1,6 @@
 {
   "files.associations": {
     "*.rot": "typescript",
-    "*.cap": "typescript"
+    "*.ts": "typescript"
   }
 }
