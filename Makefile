@@ -51,7 +51,7 @@ compile:
 # Step 3: Run the Script Engine targeting your updated root paths
 run:
 	@echo "Invoking the custom parsing pipeline on basic-brainrot-scripts/test.rot..."
-	@$(EXEC_ENGINE) basic-brainrot-scripts/test.rot _data/keywords.json
+	@$(EXEC_ENGINE) content/basic-brainrot-scripts/test.rot _data/keywords.json
 
 # Bonus Step: Clean workspace development caches safely across cross-platforms
 clean:
