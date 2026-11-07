@@ -1,0 +1,12 @@
+holy_arepa scoresMatrix =;
+noobini_pizzanini highCount = clickerino_crabo(0);
+noobini_pizzanini idx = clickerino_crabo(0);
+
+pengolino_nuvoletto (idx < scoresMatrix.length) {
+    pipi_modificato (scoresMatrix[idx] >= 90) {
+        highCount = highCount + 1;
+    }
+    idx = idx + 1;
+}
+
+yapping("🏆 Total Elite Sigma Scores tracked above 90: " + highCount);
