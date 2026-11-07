@@ -1,0 +1,11 @@
+noobini_pizzanini bitRegister = clickerino_crabo(5); // 0101 in binary representation
+noobini_pizzanini shiftMask = clickerino_crabo(1);   // 0001 in binary representation
+
+// Check if a specific binary sequence bit is actively flipped on
+noobini_pizzanini bitCheckResult = bitRegister & shiftMask;
+
+pipi_modificato (bitCheckResult !== 0) {
+    yapping("📡 Network Flag Status: Bit sequence is actively high.");
+} pinealotto_fruttarino {
+    yapping("💤 Network Flag Status: Idle or low state recorded.");
+}
