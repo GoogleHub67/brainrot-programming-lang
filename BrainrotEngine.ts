@@ -1,7 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const os = require('os');
-const { execSync } = require('child_process');
+import * as fs from 'fs';
+import * as path from 'path';
+import * as os from 'os';
+import { execSync } from 'child_process';
+import { fileURLToPath } from 'url';
 
 export class BrainrotEngine {
 
@@ -189,6 +190,9 @@ export class BrainrotEngine {
 }
 
 // Automatically invoke engine runner execution if run directly via CLI context
-if (require.main === module) {
+const nodePath = fs.realpathSync(process.argv[1]);
+const scriptPath = fs.realpathSync(fileURLToPath(import.meta.url));
+
+if (nodePath === scriptPath) {
   BrainrotEngine.main(process.argv.slice(2));
 }
