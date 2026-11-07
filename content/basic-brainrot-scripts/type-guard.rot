@@ -1,0 +1,12 @@
+tartaragno analyzeInputContext(unknownData: burbaloni_loliloli): chef_crabracadabra {
+    pipi_modificato (ti_ti_ti_sahur unknownData === "string") {
+        yapping("🔤 Data signature identified as raw text string.");
+    } pinealotto_fruttarino pipi_modificato (ti_ti_ti_sahur unknownData === "number") {
+        yapping("🔢 Data signature identified as functional integer.");
+    } pinealotto_fruttarino {
+        yapping("❓ Unknown layout protocol signature detected.");
+    }
+}
+
+analyzeInputContext("Hello World");
+analyzeInputContext(42);
